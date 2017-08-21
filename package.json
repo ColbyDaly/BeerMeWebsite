@@ -1,0 +1,37 @@
+{
+  "name": "beerme",
+  "version": "1.0.0",
+  "description": "Beer discovery web-application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColbyDaly/BeerMe.git"
+  },
+  "keywords": [
+    "Beer",
+    "Web",
+    "Responsive"
+  ],
+  "author": "James Houston, Jishnu Thakuria, Colby Daly, Alex Fallah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ColbyDaly/BeerMe/issues"
+  },
+  "homepage": "https://github.com/ColbyDaly/BeerMe#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-cookies": "^1.6.5",
+    "angular-jwt": "^0.1.9",
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.11.4",
+    "path": "^0.12.7"
+  }
+}

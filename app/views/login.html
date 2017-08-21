@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app='beerMe'>
+    <head>
+        <meta charset="UTF-8" content="width=device-width, initial-scale=1.0,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>BeerMe</title>
+        <meta name="description" content="BeerMe">
+        <meta name="author" content="">
+        <link rel="icon" type="image/x-icon" href="img/favicon.png">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link href="css/login.css" rel="stylesheet" type="text/css">
+        <!-- BOOTSTRAP CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <beer-nav></beer-nav>
+        <section class="container form-area">
+            <section class="col-md-6 col-md-offset-3 well">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item active">
+                        <a class="nav-link active" data-toggle="tab" href="#login" role="tab">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#register" role="tab">Register</a>
+                    </li>
+                </ul>
+                <section class="tab-content">
+                    <form class="tab-pane active" id="login">
+                        <br/>
+                        <section id="login-alert"></section>
+                        <section class="form-group">
+                            <input id="login-email" type="email" placeholder="Email" class="form-control">
+                        </section>
+                        <section class="form-group">
+                            <input id="login-password" type="password" placeholder="Password" class="form-control">
+                        </section>
+                        <button id="login-btn" type="submit" class="btn btn-warning">Log In</button>
+                    </form>
+                    <form class="tab-pane fade" id="register">
+                        <br/>
+                        <section id="register-alert"></section>
+                        <section class="form-group">
+                            <input type="text" id="register-name" placeholder="Full Name" class="form-control">
+                        </section>
+                        <section class="form-group">
+                            <input type="email" id="register-email" placeholder="Email" class="form-control">
+                        </section>
+                        <section class="form-group">
+                            <input type="password" id="register-password" placeholder="Password" class="form-control">
+                        </section>
+                        <section class="form-group">
+                            <input type="password" id="register-confirm" placeholder="Confirm Password" class="form-control">
+                        </section>
+                        <button type="submit" class="btn btn-warning">Register</button>
+                    </form>
+                </section>
+            </section>
+        </section>
+    </body>
+    <!-- ANGULAR -->
+    <script src="/modules/angular/angular.js"></script>
+    <script src="/modules/angular-cookies/angular-cookies.js"></script>
+    <script src="/modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="/app/app.js"></script>
+    <!-- jQUERY -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <!--  JavaScript -->
+    <script src="js/login.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- /BOOTSTRAP -->
+</html>

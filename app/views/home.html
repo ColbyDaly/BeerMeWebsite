@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" ng-app="beerMe">
+    <head>
+        <meta charset="utf-8">
+        <title>BeerMe</title>
+        <meta name="description" content="BeerMe">
+        <meta name="author" content="">
+        <link rel="icon" type="image/x-icon" href="img/favicon.png">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+        <!-- BOOTSTRAP CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <!-- /BOOTSTRAP -->
+    </head>
+    <body>
+        <beer-nav></beer-nav>
+        <section class="container">
+            <div class="jumbotron well">
+                <h1 class="display-3">BeerMe</h1>
+                <p class="lead">Cracking open a cold one with the boys just got easier.</p>
+                <hr class="my-4">
+                <p>Discover new beers that you love, and share your experience with the community</p>
+                <br/>
+                <p class="lead">
+                    <a class="btn btn-warning btn-lg" href="/beers" role="button">Start discovering</a>
+                </p>
+            </div>
+        </section>
+        <br/><br/>
+        <section id="below" class="container-fluid well well-lg">
+            <br/><br/>
+            <div class="container well well-lg">
+                <h2 class="text-center">Welcome to BeerMe!</h2>
+                <br/>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <h3>What is ABV?</h3>
+                        <p>Alcohol by volume (abbreviated as ABV, abv, or alc/vol) is a standard measure of how much alcohol (ethanol) is contained in a given volume of an alcoholic beverage (expressed as a volume percent)</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="glyphicon glyphicon-grain"></span>
+                        <h3>What is IBU?</h3>
+                        <p>IBU is an abbreviation for the International Bitterness Units scale, a gauge of beer's bitterness. What IBUs measure are the parts per million of isohumulone found in a beer. Isohumulone is the acid found in hops that gives beer its bitter bite.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                        <h3>Vote Now!</h3>
+                        <p>Unfortunately, AngularJS has a limit as to elements it can process, but User taste profiles and voting are under development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer container-fluid">
+            <br/>
+            <div class="container">
+                <ul class="list-unstyled list-inline pull-right">
+                    <li><a>&copy BeerMe 2017</a></li>
+                </ul>
+                <ul class="list-unstyled list-inline">
+                    <li><a href="https://github.com/ColbyDaly/BeerMe">Github</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+    <!-- ANGULAR -->
+    <script src="/modules/angular/angular.js"></script>
+    <script src="/modules/angular-cookies/angular-cookies.js"></script>
+    <script src="/modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="/app/app.js"></script>
+    <!-- jQUERY -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <script src="js/bootstrap.js"></script>
+</html>

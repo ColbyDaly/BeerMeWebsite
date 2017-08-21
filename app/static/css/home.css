@@ -1,0 +1,23 @@
+body {
+    background-color: #c0392b !important;
+    padding-top: 70px;
+}
+#below {
+    background-color: gray !important;
+    margin: 0;
+}
+.glyphicon {
+    font-size: 100px;
+}
+footer {
+    background-color: rgba(34,34,34,1);
+    height: 70px;
+    font-size: 15px;
+}
+footer a {
+    color: gainsboro;
+}
+footer a:hover {
+    text-decoration: none;
+    color: rgba(240,173,78,1);
+}

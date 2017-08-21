@@ -1,0 +1,15 @@
+body {
+    padding-top: 70px;
+    background-color: #c0392b !important;
+}
+.form-area {
+    padding-top: 50px;
+    font-size: 16px;
+}
+.alert {
+    font-size: 14px;
+    padding-top: 20px;
+}
+.btn {
+    width: 100%;
+}

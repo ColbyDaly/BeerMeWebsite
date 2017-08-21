@@ -1,0 +1,190 @@
+<!-- Page Nav w/search -->
+<nav class="container">
+    <ul class="pager">
+        <li class="pull-left"><a href="" ng-disabled="beers.page == 1" ng-click="beers.prevPage()">Previous</a></li>
+        <!-- Search button -->
+        <button type="button" class="btn btn-warning btn-lg search-btn" data-toggle="modal" data-target="#searchModal">Search</button>
+        <li class="pull-right"><a href="" ng-disabled="beers.page == beers.maxPage" ng-click="beers.nextPage()">Next</a></li>
+    </ul>
+</nav>
+<table class="table" ng-if="beers.flag == 'beers'">
+    <tbody ng-repeat="group in beers.items track by $index">
+        <tr ng-repeat="groupItem in group">
+            <td ng-repeat="beerThumb in groupItem track by $index" ng-if="beerThumb.name && beerThumb.name != 'defaultHttpResponseTransform'">
+                <section class="thumbnail">
+                    <img ng-show="beerThumb.labels" ng-src="{{ beerThumb.labels.medium }}" alt="beerMe Image">
+                    <img id="imgDefault" ng-hide="beerThumb.labels" src="/img/favicon.png" alt="beerMe Image">
+                    <section class="caption">
+                        <h4>{{ beerThumb.name }}</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Style:</strong> {{ beerThumb.style.name || 'N/A' }}</li>
+                            <li><strong>ABV:</strong> {{ beerThumb.abv || 'N/A' }}%</li>
+                            <li><strong>IBU:</strong> {{ beerThumb.ibu || 'N/A' }}</li>
+                        </ul>
+                        <button type="button" class="btn btn-info btn-lg wide-btn" data-toggle="modal" data-target="#myModal{{beerThumb.id}}">Read More</button>
+                        <!--<a href="#" class="btn btn-primary center" role="button">Read More</a>-->
+                        <!-- Modal -->
+                        <section class="modal fade" id="myModal{{beerThumb.id}}" role="dialog">
+                            <section class="modal-dialog">
+                                <!-- Modal content-->
+                                <section class="modal-content">
+                                    <section class="modal-header modalDefault">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <img ng-show="beerThumb.labels" ng-src="{{ beerThumb.labels.medium }}" alt="beerMe Image">
+                                        <img id="imgDefault" ng-hide="beerThumb.labels" src="/img/favicon.png" alt="beerMe Image">
+                                        <h4 class="modal-title">{{ beerThumb.name }}</h4>
+                                    </section>
+                                    <section class="modal-body">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Description:</strong> {{ beerThumb.description || 'N/A' }}</li>
+                                            <li><strong>Style:</strong> {{ beerThumb.style.name || 'N/A' }}</li>
+                                            <li><strong>Organic:</strong> {{ beerThumb.isOrganic || 'N/A' }}</li>
+                                            <li><strong>ABV:</strong> {{ beerThumb.abv || 'N/A' }}%</li>
+                                            <li><strong>IBU:</strong> {{ beerThumb.ibu || 'N/A' }}</li>
+                                        </ul>
+                                        <div ng-hide="beers.user" class='alert alert-danger alert-dismissible show' role='alert'>
+                                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                                <span aria-hidden='true'>&times;</span>
+                                            </button>
+                                            <strong>Note:</strong> You must be logged in to vote. To login or register click <a href="/login">here</a></div>
+                                        <span class="voteBtns">
+                                            <button type="button" class="btn btn-default btn-lg vote-btn" ng-class="beerThumb.up.class" ng-click="beers.toggleClass(beerThumb, 'up')">
+                                                <span class="glyphicon glyphicon-thumbs-up"></span>
+                                            </button>
+                                            <button type="button" class="btn btn-default btn-lg vote-btn" ng-class="beerThumb.down.class" ng-click="beers.toggleClass(beerThumb, 'down')">
+                                                <span class="glyphicon glyphicon-thumbs-down"></span>
+                                            </button>
+                                        </span>
+                                    </section>
+                                    <section class="modal-footer">
+                                        <button type="button" class="btn btn-default wide-btn" data-dismiss="modal">Close</button>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class="table" ng-if="beers.flag == 'style'">
+    <tbody ng-repeat="group in beers.items track by $index">
+        <tr ng-repeat="groupItem in group">
+            <td ng-repeat="beerThumb in groupItem track by $index" ng-if="beerThumb.name && beerThumb.name != 'defaultHttpResponseTransform'">
+                <section class="thumbnail">
+                    <img ng-show="beerThumb.labels" ng-src="{{ beerThumb.labels.medium }}" alt="beerMe Image">
+                    <img id="imgDefault" ng-hide="beerThumb.labels" src="/img/favicon.png" alt="beerMe Image">
+                    <section class="caption">
+                        <h4>{{ beerThumb.name }}</h4>
+                        <ul class="list-unstyled">
+                            <li><strong>Min ABV:</strong> {{ beerThumb.abvMin || 'N/A' }}%</li>
+                            <li><strong>Max ABV:</strong> {{ beerThumb.abvMax || 'N/A' }}%</li>
+                            <li><strong>Min IBU:</strong> {{ beerThumb.ibuMin || 'N/A' }}</li>
+                            <li><strong>Max IBU:</strong> {{ beerThumb.ibuMax || 'N/A' }}</li>
+                        </ul>
+                        <button type="button" class="btn btn-info btn-lg wide-btn" data-toggle="modal" data-target="#myModal{{beerThumb.id}}">Read More</button>
+                        <!--<a href="#" class="btn btn-primary center" role="button">Read More</a>-->
+                        <!-- Modal -->
+                        <section class="modal fade" id="myModal{{beerThumb.id}}" role="dialog">
+                            <section class="modal-dialog">
+                                <!-- Modal content-->
+                                <section class="modal-content">
+                                    <section class="modal-header modalDefault">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <img ng-show="beerThumb.labels" ng-src="{{ beerThumb.labels.medium }}" alt="beerMe Image">
+                                        <img id="imgDefault" ng-hide="beerThumb.labels" src="/img/favicon.png" alt="beerMe Image">
+                                        <h4 class="modal-title">{{ beerThumb.name }}</h4>
+                                    </section>
+                                    <section class="modal-body">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Description:</strong> {{ beerThumb.description || 'N/A' }}</li>
+                                            <li><strong>Min ABV:</strong> {{ beerThumb.abvMin || 'N/A' }}%</li>
+                                            <li><strong>Max ABV:</strong> {{ beerThumb.abvMax || 'N/A' }}%</li>
+                                            <li><strong>Min IBU:</strong> {{ beerThumb.ibuMin || 'N/A' }}</li>
+                                            <li><strong>Max IBU:</strong> {{ beerThumb.ibuMax || 'N/A' }}</li>
+                                        </ul>
+                                        <span>
+                                        <button type="button" class="btn btn-default btn-lg vote-btn">
+                                            <span class="glyphicon glyphicon-thumbs-up"></span>
+                                        </button>
+                                        <button type="button" class="btn btn-default btn-lg vote-btn">
+                                            <span class="glyphicon glyphicon-thumbs-down"></span>
+                                        </button>
+                                        </span>
+                                    </section>
+                                    <section class="modal-footer">
+                                        <button type="button" class="btn btn-default wide-btn" data-dismiss="modal">Close</button>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- Page Nav w/page location -->
+<nav class="container">
+    <ul class="pager">
+        <li class="pull-left"><a href="" ng-disabled="beers.page == 1" ng-click="beers.prevPage()">Previous</a></li>
+        <li class="center well"><strong>Currently viewing page {{ beers.page }} of {{ beers.maxPage }}</strong></li>
+        <li class="pull-right"><a href="" ng-disabled="beers.page == beers.maxPage" ng-click="beers.nextPage()">Next</a></li>
+    </ul>
+</nav>
+
+  <!--Search modal-->
+<!-- Modal -->
+<section class="modal fade" id="searchModal" role="dialog">
+    <section class="modal-dialog">
+        <!-- Modal content-->
+        <section class="modal-content">
+            <section class="modal-header">
+                <section>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#beers" aria-controls="beers" role="tab" data-toggle="tab">Beers</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#beer_style" aria-controls="beer_style" role="tab" data-toggle="tab">Style</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                </section>
+            </section>
+            <section class="modal-body">
+                <section class="tab-content">
+                    <section role="tabpanel" class="tab-pane active" id="beers">
+                        <strong>Keyword</strong>
+                        <form name="searchBeerForm" ng-submit="searchBeerForm.$valid && beers.searchBeers()" novalidate>
+                            <input ng-model="beers.search" type="text" placeholder="ex/ 'Coors' , 'Dogfish'" required>
+                            <button id="search_beers" type="submit" class="btn btn-info" onclick="$('.modal').modal('hide')">Search</button>
+                        </form>
+                        <strong>ABV</strong><p> Alcohol By Volume ("+10" will return everything above 10%, "-10" will return everything under 10%, "8,10" will return everything between 8% and 10% inclusive)</p>
+                        <form name="abvForm" ng-submit="abvForm.$valid && beers.searchAbv()" novalidate>
+                            <input ng-model="beers.abv" type="text" placeholder="ex/ '10' , '+10' , '8,10'" required>
+                            <button id="search_beers" type="submit" class="btn btn-info" onclick="$('.modal').modal('hide')">Search</button>
+                        </form>
+                        <strong>IBU</strong><p> International Bitterness Units, used to gauge a beer's bitterness ("+50" will return everything above 50 IBUs, "-50" will return everything less than 50 IBUs, "30,50" will return everything between 30 and 50 IBUs inclusive)</p>
+                        <form name="ibuForm" ng-submit="ibuForm.$valid && beers.searchIbu()" novalidate>
+                            <input ng-model="beers.ibu" type="text" placeholder="ex/ '50' , '+50' , '30,50'" required>
+                            <button id="search_beers" type="submit" class="btn btn-info" onclick="$('.modal').modal('hide')">Search</button>
+                        </form>
+                    </section>
+                    <section role="tabpanel" class="tab-pane" id="beer_style">
+                        <strong>Style</strong><p> A beer style is a label given to a beer that describes its overall character and often times its origin</p>
+                        <form name="searchStyleForm" ng-submit="searchStyleForm.$valid && beers.searchStyle()" novalidate>
+                            <input ng-model="beers.style" type="text" placeholder="ex/ 'Stout' , 'IPA'" required>
+                            <button id="search_style" type="submit" class="btn btn-info" onclick="$('.modal').modal('hide')">Search</button>
+                        </form>
+                    </section>
+                </section>
+            </section>
+            <section class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </section>
+        </section>
+    </section>
+</section>

@@ -1,0 +1,68 @@
+body {
+    background-color: #c0392b !important;
+    padding-top: 50px;
+}
+#imgDefault {
+    padding: 70px;
+}
+.wide-btn {
+    width: 100%;
+}
+.search-btn {
+    width: 80%;
+}
+.vote-btn {
+    width: 49%;
+}
+tr {
+    border: none !important;
+}
+td {
+    border: none !important;
+    width: 20% !important;
+    height: 100% !important;
+}
+tbody {
+    border: none !important;
+}
+footer {
+    background-color: rgba(34,34,34,1);
+    height: 70px;
+    font-size: 15px;
+}
+footer a {
+    color: gainsboro;
+}
+footer a:hover {
+    text-decoration: none;
+    color: rgba(240,173,78,1);
+}
+.modalDefault
+{
+    text-align: center;   
+}
+.modalBtnClick
+{
+    background-color: black;
+    padding: 20px;
+    color: white;
+}
+.input-group {
+    width: 75%;
+}
+.tab-pane input {
+    width: 70% !important;
+    display: inline-block !important;
+}
+.pager a {
+    font-size: 18px !important;
+    color: white !important;
+    background-color: dimgray !important;
+    border-color: rgba(34,34,34,1) !important;
+}
+.pager a:hover {
+    color: rgba(240,173,78,1) !important;
+}
+.voteBtns button:active {
+    color: dodgerblue !important;
+}
